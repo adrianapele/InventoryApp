@@ -24,13 +24,15 @@ import static com.example.adriana.inventoryapp.ProductContract.ProductEntry.TABL
  * Created by Adriana on 8/4/2018.
  */
 
-public class ProductProvider extends ContentProvider {
+public class ProductProvider extends ContentProvider
+{
     public static final int PRODUCTS = 200;
     public static final int PRODUCT_ID = 201;
 
     private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
-    static {
+    static
+    {
         uriMatcher.addURI(ProductContract.CONTENT_AUTHORITY, ProductContract.PATH_PRODUCTS, PRODUCTS);
 
         uriMatcher.addURI(ProductContract.CONTENT_AUTHORITY, ProductContract.PATH_PRODUCTS + "/#", PRODUCT_ID);
@@ -39,20 +41,23 @@ public class ProductProvider extends ContentProvider {
     private ProductDbHelper dbHelper;
 
     @Override
-    public boolean onCreate() {
+    public boolean onCreate()
+    {
         dbHelper = new ProductDbHelper(getContext());
         return true;
     }
 
     @Nullable
     @Override
-    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder)
+    {
         SQLiteDatabase readableDatabase = dbHelper.getReadableDatabase();
 
         Cursor cursor;
 
         int match = uriMatcher.match(uri);
-        switch (match) {
+        switch (match)
+        {
             case PRODUCTS:
                 cursor = readableDatabase.query(TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
                 break;
