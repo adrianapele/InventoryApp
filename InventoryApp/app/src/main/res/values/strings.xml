@@ -2,7 +2,7 @@
     <string name="app_name">InventoryApp</string>
     <string name="empty_view_subtitle_text">Start by adding a new product</string>
     <string name="empty_view_title_text">You don\'t have any products yet</string>
-    <string name="delete_all_products">Delete All Products</string>
+    <string name="delete_all_products">Delete Products</string>
     <string name="insert_dummy_product">Insert Dummy Product</string>
     <string name="editor_activity_title_new_product">Add new product</string>
     <string name="editor_activity_title_edit_product">Edit product</string>
