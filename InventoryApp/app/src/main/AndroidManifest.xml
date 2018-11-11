@@ -23,6 +23,7 @@
             android:authorities="com.example.adriana.inventoryapp"
             android:enabled="true"
             android:exported="true" />
+			Test thomas
 
         <activity android:name=".EditProductActivity"
             android:parentActivityName=".MainActivity">
